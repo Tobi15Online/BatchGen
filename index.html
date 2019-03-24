@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="Description" content="Create Batch scripts without coding!">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#E7BB41">
+    <title>Batchelor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet">
+  </head>
+  <body onload="LoadCookie()">
+
+    <!-- Block IE, mobile devices, and noscript-people -->
+    
+    <noscript><style>#incompatible{display:block;}</style></noscript>
+    <div id="incompatible">
+        <div>Please try a different Browser or enable scripts</div>
+    </div>
+    <script>CheckDevice()</script>
+    
+    <!-- K we can move on now...-->
+   <div id="CodeBits">
+      <div id="aaa" class="Template DoNTimes SL Loop" draggable="true" ondragstart="drag(event)">
+        <div class="LoopDispContainer">
+          <p>Do</p>
+          <input value="1" type="number" min="1">
+          <p>times</p>
+          <div class="DropAbove" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div  class="Dropper" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div>  
+      </div>
+
+      <div id="bbb" class="Template Echo SL" draggable="true" ondragstart="drag(event)">
+       <div style="height:0px;">
+         <p>Say</p>
+         <input placeholder="Lorem Ipsum" type="text">
+          <div class="DropAbove" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+       </div>  
+     </div>
+
+     <div id="ccc" class="Template WriteToFile SL" draggable="true" ondragstart="drag(event)">
+       <div style="height:0px;">
+         <p>Write</p>
+         <input placeholder="eggs, why, zee" type="text">
+         <p>to</p>
+         <input class="FilePath" placeholder=".\Lorem.txt" type="text">
+         <div class="DropAbove" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+       </div>  
+     </div>
+
+     <div id="ddd" class="Template DeleteFile SL" draggable="true" ondragstart="drag(event)">
+       <div style="height:0px;">
+         <p>Delete file</p>
+         <input placeholder=".\Ipsum.txt" type="text">
+         <div class="DropAbove" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+       </div>  
+     </div>
+
+     <div id="eee" class="Template DeleteFolder SL" draggable="true" ondragstart="drag(event)">
+       <div style="height:0px;">
+         <p>Delete folder</p>
+         <input placeholder=".\Directory\" type="text">
+         <div class="DropAbove" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+       </div>  
+     </div>
+
+     <div id="fff" class="Template CreateFolder SL" draggable="true" ondragstart="drag(event)">
+       <div style="height:0px;">
+         <p>Create folder</p>
+         <input placeholder=".\New\" type="text">
+         <div class="DropAbove" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+       </div>  
+     </div>
+
+     <div id="ggg" class="Template OtherCommand SL" draggable="true" ondragstart="drag(event)">
+       <div style="height:0px;">
+         <p>Other command</p>
+         <input placeholder="cd .\NewDir\" type="text">
+         <div class="DropAbove" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+       </div>  
+     </div>
+
+
+     <div id="hhh" class="Template ClearScreen SL" draggable="true" ondragstart="drag(event)">
+       <div style="height:0px;">
+         <p>Clear Screen</p>
+         <div class="DropAbove" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+       </div>  
+     </div>
+    
+     <div id="000" class="Template IfExists SL Loop" draggable="true" ondragstart="drag(event)">
+       <div class="LoopDispContainer">
+         <p>If item</p>
+         <input placeholder=".\ImRunninOuttaNames" type="text">
+         <input type="checkbox" name="doesnt">
+         <p class="optional">doesn't</p>
+         <p>exist</p>
+         <div class="DropAbove" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+       </div>
+       <div  class="Dropper" ondrop="drop(event)" ondragover="allowDrop(event)">
+       </div>  
+     </div>
+
+     <div id="111" class="Template ForInFolder SL Loop" draggable="true" ondragstart="drag(event)">
+       <div class="LoopDispContainer">
+         <p>For each item in</p>
+         <input placeholder=".\ImRunninOuttaNames" type="text">
+         <div class="DropAbove" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+       </div>
+       <div  class="Dropper" ondrop="drop(event)" ondragover="allowDrop(event)">
+       </div>  
+     </div>
+
+
+
+
+
+
+      </div>
+
+
+
+    <div id="CodeField">
+      <div id="PlaceHolderBar">
+          <button class="btn-big pointer" onclick="DisplayScript('save')" title="Display Script"><img src="Img/save.png" alt="Preview script"></button>         
+          <button class="btn-big pointer" onclick="DownloadScript()" title="Download Script"><img src="Img/download.png" alt="Save script"></button>
+          <button class="btn-big pointer" onclick="DisplayScript('tutorial')" title="Show Tutorial"><img src="Img/tutorial.png" alt="Watch the tutorial"></button>
+          <button class="btn-big pointer" title="View the GitHub repo!" onclick="window.open('https://github.com/Tobi15Online/BatchGen', '_blank')"><img src="Img/GitHub.png" alt="View project on GitHub"></button>
+          <button class="btn-big pointer" onclick="callCookie()" title="Save as cookie"><img src="Img/cookie.png" alt="Save as cookie!"></button>
+          <div class="btn-big trash" ondrop="drop(event)" ondragover="allowDrop(event)" title="Throw snippet away"><img class="trash" src="Img/trash.png" alt="Throw snippet away"></div>
+      </div>
+      <div id="CodeInput">
+        <div></div>
+        <div id="EndDropper" class="Dropper" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div>
+
+      </div>
+    </div>
+    <div id="DispInFocus">
+      <div class="save">
+        <button class="closeBtn pointer" onclick="HideScript('save')">X</button>
+        <button id="downloadBtn" class="pointer" onclick="DownloadScript()"><img src="Img/download.png"></button>
+        <p id="savetext"></p>  
+      </div>
+
+      <div class="tutorial">
+        <button class="closeBtn pointer" onclick="HideScript('tutorial')">X</button>
+        <iframe style="height:100%;width:100%;" src="https://www.youtube.com/embed/IV7P6mWLpGM?loop=0&autoplay=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </body>
+</html>

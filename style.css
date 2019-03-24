@@ -1,0 +1,336 @@
+/*BASIC SETUP*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  outline: 0 none;
+}
+
+html, body {
+  height: 100vh;
+  overflow: hidden;
+}
+/*COLOR VARIABLES*/
+:root {
+    --loop:#E7BB41;
+    --other:#3E7AD6;
+    --file:#56E5CD; 
+    --dropper:#1A4049;
+}
+
+/*6286ED|3E7AD6|56E5CD|43C2C1|1A4049*/
+
+/*###############################*/
+/*#### STATIC OBJECT STYLING ####*/
+/*###############################*/
+
+#CodeBits {
+width: 40%;
+height:100vh;
+position:absolute;
+left:0px;
+overflow:auto;
+}
+
+#CodeField {
+  width:calc(60% - 6px);
+  height:100%;
+  border-left-style: solid;
+  border-left-width:1px;
+  display:inline-block;
+  margin-top:-4px;
+  position:absolute;
+  right:0px;
+}
+
+#PlaceHolderBar {
+  height:50px;
+  width:100%;
+}
+
+#CodeInput {
+width:100%;
+height:calc(100% - 51px);
+padding-top:1px;
+overflow-y:auto;
+display:inline-block;
+background: linear-gradient(
+  to bottom,
+  rgb(248, 248, 248) 50%,
+  rgb(240, 240, 240) 50%
+);
+background-size:100% 40px;
+background-attachment:local;
+}
+
+.Dropper {
+  width:100%;
+  height:20px;
+  background-color:var(--dropper);
+}
+
+#incompatible {
+  position:absolute;
+  background-color:#fff;
+  top:0px;
+  left:0px;
+  z-index:5;
+  width:100%;
+  height:100%;
+  display:none;
+  font-family: 'Roboto Condensed', sans-serif;  
+}
+
+#incompatible div{
+  margin-top:100px;
+  text-align:center;
+}
+
+/*#### Misc ####*/
+.pointer {
+    cursor:pointer;
+}
+
+/*############################*/
+/*#### CODEBLOCK DEFAULTS ####*/
+/*############################*/
+
+.SL {
+  height:20px;
+  box-shadow: 0px 0px 0px 0.4px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 0px 0px 0.4px rgba(0, 0, 0, 0.7);
+  font-family: 'Roboto Condensed', sans-serif;  
+  border-radius: 0px 4px 4px 0px;
+}
+
+.SL>div>p, .SL>div>input {
+  position: relative;
+  font-family:inherit;
+  display:inline-block;
+}
+
+.SL>div>.DropAbove {
+    height: 20px;
+    position: relative;
+    width: 100%;
+    top: -19.5px;
+}
+
+.SL>div>p {
+  left:4px;
+  cursor:default;
+}
+
+.SL>div>input {
+  left:6px;
+  top: -0.5px;
+  width: 115px;
+  height: 15px;
+  border: 0px;
+  z-index:1;
+}
+/*######################################*/
+/*#### MULTILINE CODEBLOCK DEFAULTS ####*/
+/*######################################*/
+
+.Loop {
+  height:auto;
+  border-style:solid;
+  border-color:var(--loop);
+  border-width:20px 0px 20px 20px;
+}
+
+.Loop>.LoopDispContainer {
+    height:0px;
+    top: -19.5px;
+    position: relative;  
+}
+
+.Loop>div>input {
+    width: 60px;
+    top: -0.5px;
+}
+
+.Loop>div>.DropAbove {
+    width: calc(100% + 20px);
+    left: -20px;
+}
+
+/*#### DO N TIMES CODEBLOCK ####*/
+
+.DoNTimes {
+  width:150px;
+}
+
+.DoNTimes>div>.NTimesInput {
+    width: 45px;
+}
+
+/*#### IF EXISTS CODEBLOCK ####*/
+
+.IfExists {
+  width:218.5px;
+}
+
+/* CHECKBOX FOR IF NOT */
+
+.IfExists>div>input[type="checkbox"] {
+  width:20px;
+  height:14px;
+  top: 2px;
+  margin-right:-3px;
+}
+
+.IfExists>div>.optional{
+    color:#0005;
+}
+
+.IfExists>div>input:checked + .optional{
+    color:#000;
+}
+
+/*#### FOREACH ITEM IN FOLDER ####*/
+
+.ForInFolder{
+width:176.5px;
+}
+
+/*###################################*/
+/*#### CODEBLOCK CUSTOM SETTINGS ####*/
+/*###################################*/
+
+.Echo{  
+  width:150.5px;
+  background-color:var(--other);
+}
+/*WrToF*/
+.WriteToFile {
+  width:285.39px;
+  background-color:var(--file);
+}
+
+.SL>div>.FilePath {
+  width:105px;
+}
+/*WrToF*/
+
+.DeleteFile {
+  width:190.5px;
+  background-color:var(--file);
+}
+
+.DeleteFolder {
+  width:208.5px;
+  background-color:var(--file);
+}
+
+.CreateFolder {
+  width:209.5px;
+  background-color:var(--file);
+}
+
+.OtherCommand {
+  width:228.5px;
+  background-color:var(--other);
+}
+
+.ClearScreen {
+  width:87px;
+  background-color:var(--other);
+}
+/*#### MISC ####*/
+
+.btn-big>img{
+  height:35px;
+  margin-top:10px;
+  margin-left:10px;
+}
+
+.btn-big {
+  background-color:#fff;
+  border-style:none;
+}
+
+.trash {
+  float:right;
+  margin-right:15px;
+}
+
+
+.tutorial {
+  display:none;
+}
+
+/*#### SAVE DIALOGUE ####*/
+
+.save {
+  display:none;
+}
+
+.display {
+  display:initial;
+  box-shadow:0px 0px 5px #ccc;
+  width:80vw;
+  height:80vh;
+  background-color: white;
+  position:absolute;
+  top:10vh;
+  left:10vw;
+}
+
+.display>.closeBtn {
+    font-weight: 900;
+    font-size: 18px;
+    color: #ccc;
+}
+
+.display>button {
+    background-color: #fff;
+    border-style: none;
+    width: 28px;
+    height:28px;
+}
+
+.tutorial>.closeBtn {
+  position:absolute;
+  float:right;
+  background-color:rgba(0,0,0,0);
+}
+
+.save>#savetext {
+  height:calc(100% - 128px);
+  width:calc(100% - 100px);
+  margin:50px 50px 50px 50px;
+  font-size:16px;
+  font-family: 'Cousine', monospace;
+  overflow-y:auto;
+}
+
+.save>#downloadBtn {
+    width: 28px;
+    height:28px;
+    margin-left:5px;
+}
+
+.save>#downloadBtn>img {
+    width: 23px;
+    height:23px;
+    top: 5px;
+    position: relative;
+}
+
+.blur {
+  filter:blur(3px);
+  pointer-events:none;
+}
+
+
+/*############################*/
+/*#### STYLING CODEBLOCKS ####*/
+/*############################*/
+
+#CodeBits>div{
+    margin: 20px 0px 0px 15px;
+    border-radius: 4px;
+}
+
